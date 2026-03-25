@@ -15,6 +15,8 @@ class BaseController:
     def render(self, view_name: str, context: dict = None) -> str:
         if context is None:
             context = {}
+        if not view_name.endswith('.html.j2'):
+            view_name += '.html.j2'
         template = self.env.get_template("templates/" + view_name)
         self.default_context.update(context)
         render_context = {**self.default_context, **context}

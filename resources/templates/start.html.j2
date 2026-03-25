@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html.j2" %}
 
 {% block title %}Willkommen{% endblock %}
 
@@ -21,8 +21,11 @@
                 <div class="card-body d-flex flex-column h-100">
                     <i class="bi bi-sim fs-1 text-primary mb-3 d-block"></i>
                     <h3 class="h5 card-title">SmartCard anmelden</h3>
-                    <div class="card-text mb-3">Legen Sie Ihre Wahl-SmartCard ein, um sich zu authentifizieren und alle Funktionen freizuschalten.</div>
-                    <button type="button" class="btn btn-success d-flex justify-content-center align-items-center stretched-link w-100 mt-auto disabled"
+                    <div class="card-text mb-3">Legen Sie Ihre Wahl-SmartCard ein, um sich zu authentifizieren und alle
+                        Funktionen freizuschalten.
+                    </div>
+                    <button type="button"
+                            class="btn btn-success d-flex justify-content-center align-items-center stretched-link w-100 mt-auto disabled"
                             onclick="loadView('start')">Angemeldet<i class="bi bi-key ms-2"></i>
                     </button>
                 </div>
@@ -33,9 +36,12 @@
                 <div class="card-body d-flex flex-column h-100">
                     <i class="bi bi-gear fs-1 text-primary mb-3 d-block"></i>
                     <h3 class="h5 card-title">Wahllokal einrichten</h3>
-                    <div class="card-text mb-3">Richten Sie Wahlbezirk und Wahlkreis ein. Diese Einstellungen sind Voraussetzung für die Ergebniserfassung.</div>
-                    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center stretched-link w-100 mt-auto"
-                            onclick="loadView('start')">Einstellungen<i class="bi bi-gear ms-2"></i>
+                    <div class="card-text mb-3">Richten Sie Wahlbezirk und Wahlkreis ein. Diese Einstellungen sind
+                        Voraussetzung für die Ergebniserfassung.
+                    </div>
+                    <button type="button"
+                            class="btn btn-primary d-flex justify-content-center align-items-center stretched-link w-100 mt-auto"
+                            onclick="loadView('auth_index', {'id':15})">Einstellungen<i class="bi bi-gear ms-2"></i>
                     </button>
                 </div>
             </div>
@@ -45,8 +51,11 @@
                 <div class="card-body d-flex flex-column h-100">
                     <i class="bi bi-pie-chart fs-1 text-primary mb-3 d-block"></i>
                     <h3 class="h5 card-title">Wahlergebnisse erfassen</h3>
-                    <div class="card-text mb-3">Tragen Sie die ausgezählten Stimmen ein. Die Software prüft automatisch auf Plausibilität und Vollständigkeit.</div>
-                    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center stretched-link w-100 mt-auto"
+                    <div class="card-text mb-3">Tragen Sie die ausgezählten Stimmen ein. Die Software prüft automatisch
+                        auf Plausibilität und Vollständigkeit.
+                    </div>
+                    <button type="button"
+                            class="btn btn-primary d-flex justify-content-center align-items-center stretched-link w-100 mt-auto"
                             onclick="loadView('result')">Wahlliste<i class="bi bi-chevron-double-right ms-2"></i>
                     </button>
                 </div>
@@ -57,13 +66,21 @@
                 <div class="card-body d-flex flex-column h-100">
                     <i class="bi bi-mailbox fs-1 text-primary mb-3 d-block"></i>
                     <h3 class="h5 card-title">Schnellmeldung senden</h3>
-                    <div class="card-text mb-3">Senden Sie das vorläufige Ergebnis sofort nach Schließung der Wahllokale an die übergeordnete Stelle.</div>
-                    <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center stretched-link w-100 mt-auto"
+                    <div class="card-text mb-3">Senden Sie das vorläufige Ergebnis sofort nach Schließung der Wahllokale
+                        an die übergeordnete Stelle.
+                    </div>
+                    <button type="button"
+                            class="btn btn-primary d-flex justify-content-center align-items-center stretched-link w-100 mt-auto"
                             onclick="loadView('start')">Übertragen<i class="bi bi-send ms-2"></i>
                     </button>
                 </div>
             </div>
         </div>
+        {% if id %}
+        <div class="col-12">
+            <p>ID: {{ id }}</p>
+        </div>
+        {% endif %}
     </div>
 </div>
 

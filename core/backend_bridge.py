@@ -1,6 +1,6 @@
 import json
 
-from PySide6.QtCore import QObject, Slot
+from PySide6.QtCore import QObject, Slot, QUrl
 
 from core.router import Router
 
@@ -11,14 +11,14 @@ class BackendBridge(QObject):
         self.main_window = main_window
         self.router = Router()
 
-    @Slot(str, result=str)
-    def load_view(self, route_name: str):
+    @Slot(str, 'QVariant', result=str)
+    def load_view(self, route_name: str, data: dict = None):
         """Wird von JavaScript aufgerufen: loadView('election_index')"""
         try:
-            html = self.router.execute(route_name)
-            return html
+            if data is None:
+                data = {}
+            return self.router.execute(route_name, **data)
         except Exception as e:
             print(f"Router Error: {e}")
-            # Fallback: Error-View rendern
             from controller.error_controller import ErrorController
-            return ErrorController().render("error.html", {"error": str(e)})
+            return ErrorController().render("error", {"error": str(e)})

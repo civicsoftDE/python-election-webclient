@@ -1,0 +1,17 @@
+app:
+  name: "Wahlsoftware 2"
+  title: "CivicSoft Germany"
+  version: "1.0.0"
+  organization: "CivicSoft Germany"
+  domain: "civicsoft.de"
+
+window:
+  width: 1280
+  height: 720
+  min_width: 1280
+  min_height: 720
+  icon: ":/static/icons/chart2.ico"
+
+features:
+  debug: true
+  logging: true

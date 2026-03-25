@@ -1,9 +1,10 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
     <qresource prefix="/">
-        <file>base.html</file>
-        <file>templates/start.html</file>
-        <file>templates/result.html</file>
+        <file>base.html.j2</file>
+        <file>templates/start.html.j2</file>
+        <file>templates/result.html.j2</file>
+        <file>templates/error.html.j2</file>
         <file>static/fonts/bootstrap-icons.min.css</file>
         <file>static/fonts/fonts/bootstrap-icons.woff</file>
         <file>static/fonts/fonts/bootstrap-icons.woff2</file>

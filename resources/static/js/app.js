@@ -31,10 +31,8 @@ document.querySelector('.list-group-item-action').scrollIntoView({
 function loadView(routeName, data = {}) {
     new QWebChannel(qt.webChannelTransport, function(channel) {
         var bridge = channel.objects.bridge;
-        bridge.load_view(routeName, function(htmlContent) {
-            document.open();
-            document.write(htmlContent);
-            document.close();
+        bridge.load_view(routeName, data, function(htmlContent) {
+            document.documentElement.innerHTML = htmlContent;
         });
     });
 }
