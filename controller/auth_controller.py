@@ -6,9 +6,7 @@ class AuthController(BaseController):
 
     @route('auth_index', aliases=['start'])
     def index(self, id: int = None):
-        if id is None:
-            return self.render("start.html.j2")
-        else:
-            return self.render("start", {
-                "id": id
-            })
+        data = {}
+        if id is not None:
+            data["id"] = id
+        return self.render("start", data)

@@ -1,6 +1,4 @@
-import json
-
-from PySide6.QtCore import QObject, Slot, QUrl
+from PySide6.QtCore import QObject, Slot
 
 from core.router import Router
 
@@ -21,5 +19,5 @@ class BackendBridge(QObject):
             return self.router.execute(route_name, **data)
         except Exception as e:
             print(f"Router Error: {e}")
-            from controller.error_controller import ErrorController
+            from core.error_controller import ErrorController
             return ErrorController().render("error", {"error": str(e)})

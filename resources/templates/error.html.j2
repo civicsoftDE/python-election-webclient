@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-Sorry digga!
-</body>
-</html>
+{% extends "base.html.j2" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-danger">
+        <h1 class="h5 alert-heading">😕 Oops! Fehler aufgetreten</h1>
+        <p class="lead">
+            Die angeforderte Seite wurde nicht gefunden.
+        </p>
+        <p>
+            <strong>Fehler:</strong> {{ error }}
+        </p>
+        <p class="mb-0">
+            <a href="javascript:loadView('start')" class="btn btn-primary">
+                ← Zurück zur Startseite
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}
