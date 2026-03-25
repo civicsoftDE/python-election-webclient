@@ -1,5 +1,6 @@
 from jinja2 import Environment
 
+from core.bootstrap import Bootstrap
 from core.qrc_loader import QrcLoader
 
 
@@ -11,6 +12,9 @@ class BaseController:
             "message_header": "Ausweis einlegen",
             "message_explanation": "Bitte legen Sie Ihren Personalausweis auf das Lesegerät."
         }
+
+    def get_main_window(self):
+        return Bootstrap.get_instance()
 
     def render(self, view_name: str, context: dict = None) -> str:
         if context is None:

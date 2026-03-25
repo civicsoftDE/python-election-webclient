@@ -10,8 +10,11 @@ from core.config import AppConfig
 
 
 class Bootstrap(QMainWindow):
+    _instance = None
+
     def __init__(self):
         super().__init__()
+        Bootstrap._instance = self
         self.config = AppConfig()
         self.bridge = BackendBridge(self)
         self.browser = QWebEngineView()
@@ -21,6 +24,10 @@ class Bootstrap(QMainWindow):
         self._init_web_channel()
 
         self.load_view('start')
+
+    @classmethod
+    def get_instance(cls):
+        return cls._instance
 
     def load_view(self, view_name: str):
         html = self.bridge.load_view(view_name)
