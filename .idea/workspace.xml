@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02289b95-92ea-48ca-a9c2-9f48c8484391" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/auth_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/base_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bootstrap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/error.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/error.html.j2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/start.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/start.html.j2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources_rc.py" afterDir="false" />
-    </list>
+    <list default="true" id="02289b95-92ea-48ca-a9c2-9f48c8484391" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +115,7 @@
       <workItem from="1774284805117" duration="14121000" />
       <workItem from="1774304211806" duration="10977000" />
       <workItem from="1774425947838" duration="6903000" />
-      <workItem from="1774452233198" duration="14157000" />
+      <workItem from="1774452233198" duration="14777000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -157,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774463002810</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <option name="closed" value="true" />
+      <created>1774470337616</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774470337616</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +171,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_election_webclient$main.coverage" NAME="main Coverage Results" MODIFIED="1774452969145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_election_webclient$bootstrap.coverage" NAME="bootstrap Coverage Results" MODIFIED="1774427953569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/python_election_webclient$WebClient.coverage" NAME="WebClient Coverage Results" MODIFIED="1774470323893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_election_webclient$WebClient.coverage" NAME="WebClient Coverage Results" MODIFIED="1774475553282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
