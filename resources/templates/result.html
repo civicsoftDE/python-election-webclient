@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Wahlergebnisse{% endblock %}
+{% block page_title %}Wahlergebnisse erfassen{% endblock %}
+
+{% block content %}
+<div class="bg-secondary-subtle">
+    <div class="container-fluid py-2"></div>
+    <div class="bg-white border-top rounded-top-5 text-center py-3">
+        <h3 class="h4 d-flex justify-content-center align-items-center"><i class="bi bi-pie-chart me-2"></i>Übersicht</h3>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="">
+                <div class="list-group list-group-flush list-group-scrollable rounded-3 shadow">
+                    <!-- Header -->
+                    <div class="list-group-item list-group-header py-3 d-flex align-items-center justify-content-between text-primary fw-bold">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 75px;">#</div>
+                            <div style="width: 300px;">Kandidat</div>
+                            <div>Partei</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 150px;" class="text-end">Erststimmen</div>
+                            <div style="width: 150px;" class="text-end">Zweitstimmen</div>
+                        </div>
+                    </div>
+
+                    <!-- Kandidaten-Liste -->
+                    {% for kandidat in kandidaten %}
+                    <a class="list-group-item list-group-item-action d-flex align-items-center justify-content-between"
+                       data-kandidat='{{ kandidat | tojson }}'
+                       onclick="openVoteModal(this)">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 75px;">{{ kandidat.liste_nummer }}</div>
+                            <div style="width: 300px;">{{ kandidat.name }}</div>
+                            <div>{{ kandidat.partei }}</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 150px;" class="text-end">{{ kandidat.erststimmen }}</div>
+                            <div style="width: 150px;" class="text-end">{{ kandidat.zweitstimmen }}</div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    <div class="list-group-item list-group-footer d-flex align-items-center justify-content-between text-bg-primary">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 75px;">Summe</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div style="width: 150px;" class="text-end summe-value">{{ primary_voices }}</div>
+                            <div style="width: 150px;" class="text-end summe-value">{{ secondary_voices }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="voteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="voteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="voteModalLabel">Stimme bearbeiten</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="voteForm">
+                    <!-- Versteckte ID -->
+                    <input type="hidden" id="kandidat_id">
+
+                    <!-- Kandidat (Read-Only) -->
+                    <div class="mb-3">
+                        <label class="form-label">Kandidat</label>
+                        <input type="text" class="form-control" id="kandidat_name" readonly>
+                    </div>
+
+                    <!-- Partei (Read-Only) -->
+                    <div class="mb-3">
+                        <label class="form-label">Partei</label>
+                        <input type="text" class="form-control" id="kandidat_partei" readonly>
+                    </div>
+
+                    <!-- Status (Dropdown) -->
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select class="form-select" id="kandidat_status">
+                            <option value="offen">Offen</option>
+                            <option value="gewaehlt">Gewählt</option>
+                            <option value="nicht_gewaehlt">Nicht gewählt</option>
+                            <option value="ersatz">Ersatzkandidat</option>
+                        </select>
+                    </div>
+
+                    <!-- Ersatzkandidat -->
+                    <div class="mb-3">
+                        <label class="form-label">Ersatzkandidat</label>
+                        <input type="text" class="form-control" id="ersatzkandidat"
+                               placeholder="Name des Ersatzkandidaten">
+                    </div>
+
+                    <!-- Erststimmen -->
+                    <div class="mb-3">
+                        <label class="form-label">Erststimmen</label>
+                        <input type="number" class="form-control" id="erststimmen" min="0" value="0">
+                    </div>
+
+                    <!-- Zweitstimmen -->
+                    <div class="mb-3">
+                        <label class="form-label">Zweitstimmen</label>
+                        <input type="number" class="form-control" id="zweitstimmen" min="0" value="0">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn btn-primary" onclick="saveVote()">Speichern</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Modal öffnen und mit Daten füllen
+    function openVoteModal(element) {
+        // Daten aus data-Attribut lesen und parsen
+        const kandidat = JSON.parse(element.dataset.kandidat);
+
+        // Formular füllen
+        document.getElementById('kandidat_id').value = kandidat.id;
+        document.getElementById('kandidat_name').value = kandidat.name;
+        document.getElementById('kandidat_partei').value = kandidat.partei;
+        document.getElementById('kandidat_status').value = kandidat.status;
+        document.getElementById('erststimmen').value = kandidat.erststimmen;
+        document.getElementById('zweitstimmen').value = kandidat.zweitstimmen;
+        document.getElementById('ersatzkandidat').value = kandidat.ersatzkandidat || '';
+
+        const modalEl = document.getElementById('voteModal');
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modal.show();
+    }
+
+    // Daten an Python senden
+    function saveVote() {
+        const data = {
+            id: parseInt(document.getElementById('kandidat_id').value),
+            status: document.getElementById('kandidat_status').value,
+            ersatzkandidat: document.getElementById('ersatzkandidat').value,
+            erststimmen: parseInt(document.getElementById('erststimmen').value),
+            zweitstimmen: parseInt(document.getElementById('zweitstimmen').value)
+        };
+
+        new QWebChannel(qt.webChannelTransport, function (channel) {
+            var bridge = channel.objects.bridge;
+            bridge.save_vote_data(JSON.stringify(data), function (success) {
+                if (success) {
+                    // Modal schließen
+                    var modalEl = document.getElementById('voteModal');
+                    var modal = bootstrap.Modal.getInstance(modalEl);
+                    modal.hide();
+
+                    // View neu laden
+                    loadView('result');
+                } else {
+                    alert('Fehler beim Speichern!');
+                }
+            });
+        });
+    }
+</script>
+{% endblock %}

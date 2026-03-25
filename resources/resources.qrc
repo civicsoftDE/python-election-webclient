@@ -1,0 +1,16 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>base.html</file>
+        <file>templates/start.html</file>
+        <file>templates/result.html</file>
+        <file>static/fonts/bootstrap-icons.min.css</file>
+        <file>static/fonts/fonts/bootstrap-icons.woff</file>
+        <file>static/fonts/fonts/bootstrap-icons.woff2</file>
+        <file>static/css/style.css</file>
+        <file>static/js/app.js</file>
+        <file>static/css/bootstrap.min.css</file>
+        <file>static/js/bootstrap.bundle.min.js</file>
+        <file>static/icons/chart2.ico</file>
+    </qresource>
+</RCC>

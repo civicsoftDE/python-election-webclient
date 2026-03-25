@@ -1,0 +1,164 @@
+/* ---------------------------------------------------------
+   GLOBALE EINSTELLUNG: Textmarkierung deaktivieren
+   --------------------------------------------------------- */
+:root {
+    --layout-header-height: 80px;
+    --layout-message-height: 60px;
+    --layout-footer-buffer: 40px;
+}
+
+.list-group-scrollable {
+    max-height: calc(100vh - var(--layout-header-height) - var(--layout-message-height) - var(--layout-footer-buffer));
+}
+
+.list-group-scrollable {
+    scroll-behavior: smooth;
+}
+
+.list-group-scrollable {
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Performance-Optimierung */
+    will-change: scroll-position;
+    transform: translateZ(0); /* Hardware-Beschleunigung anregen */
+    -webkit-overflow-scrolling: touch; /* Für Touch-Geräte */
+}
+
+/* Scrollbar Styling (vereinfacht für Performance) */
+.list-group-scrollable::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+.list-group-scrollable::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+/* Vermeide teure Box-Shadows beim Scrollen */
+.list-group-header,
+.list-group-footer {
+    /* Statt box-shadow einen einfachen Border nutzen */
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: #fff;
+    z-index: 10;
+}
+
+.card {
+    border: none!important;
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-user-select: none; /* Chrome, Safari, Qt WebEngine */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Standard */
+}
+
+/* Header & Message bleiben natürlich */
+#header,
+section.container-fluid {
+    flex-shrink: 0;
+}
+
+main {
+    flex: 1 0 auto;
+    animation: fadeIn 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------------------------------------
+   AUSNAHME: Markierung für bestimmte Elemente erlauben
+   --------------------------------------------------------- */
+.selectable,
+.selectable * {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    cursor: text; /* Cursor ändert sich zum Text-Cursor */
+}
+
+/* Optional: Spezielle Klasse für Copy-Paste Bereiche */
+.copyable {
+    -webkit-user-select: all; /* Markiert beim Klick den ganzen Text */
+    user-select: all;
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   Scrollbare List-Group (nur Liste scrollt, nicht die Page)
+   --------------------------------------------------------- */
+
+/* Container für die scrollbare Liste */
+.list-group-scrollable {
+    max-height: calc(100vh - 280px); /* viewport - (header + message + padding) */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Scrollbar stylen (optional, für Chrome/Safari/Qt WebEngine) */
+.list-group-scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+.list-group-scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.list-group-scrollable::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+.list-group-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Header-Zeile sticky machen (bleibt beim Scrollen oben) */
+.list-group-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff; /* Wichtig: Sonst scheint Content durch */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Leichter Schatten für Trennung */
+}
+
+/* Summen-Zeile sticky am Ende (optional) */
+.list-group-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
