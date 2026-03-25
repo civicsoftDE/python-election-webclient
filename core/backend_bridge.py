@@ -10,6 +10,7 @@ class BackendBridge(QObject):
         super().__init__()
         self.main_window = main_window
         self.router = Router()
+        self.router.discover_routes()
 
     @Slot(str, 'QVariant', result=str)
     def load_view(self, route_name: str, data: dict = None):

@@ -1,34 +1,34 @@
-from functools import wraps
-
-
 class Route:
-    """
-    Decorator für Controller-Methoden
-    Verwendung: @route("election_index")
-    """
-    _registry = {}  # Zentrale Route-Registry (Singleton)
+    _registry = {}
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, aliases: list = None):
+        """
+        Route-Decorator mit Alias-Support
+
+        Args:
+            name: Haupt-Name der Route
+            aliases: Liste von Alias-Namen (optional)
+        """
         self.name = name
+        self.aliases = aliases or []
 
     def __call__(self, func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            return func(*args, **kwargs)
-
-        # Route registrieren
-        self._registry[self.name] = {
+        route_info = {
             "func": func,
+            "method_name": func.__name__,
             "name": self.name,
             "module": func.__module__,
-            "controller": func.__qualname__.split('.')[0]
+            "controller": func.__qualname__.split('.')[0] if '.' in func.__qualname__ else 'Unknown',
+            "aliases": self.aliases
         }
-
-        return wrapper
+        self._registry[self.name] = route_info
+        for alias in self.aliases:
+            self._registry[alias] = route_info
+        return func
 
     @classmethod
     def get_registry(cls) -> dict:
-        """Gibt alle registrierten Routes zurück"""
+        """Gibt eine Kopie der Registry zurück"""
         return cls._registry.copy()
 
     @classmethod
@@ -36,6 +36,23 @@ class Route:
         """Löscht alle registrierten Routes (für Tests)"""
         cls._registry = {}
 
+    @classmethod
+    def get_route_info(cls, route_name: str) -> dict:
+        """Gibt Info für eine spezifische Route zurück"""
+        return cls._registry.get(route_name)
 
-# Shortcut für einfacheren Import
+    @classmethod
+    def get_all_routes(cls) -> list:
+        """Gibt alle Route-Namen zurück (inkl. Aliase)"""
+        return list(cls._registry.keys())
+
+    @classmethod
+    def get_main_routes(cls) -> list:
+        """Gibt nur Haupt-Routes zurück (ohne Aliase)"""
+        return [
+            name for name, info in cls._registry.items()
+            if info["name"] == name
+        ]
+
+
 route = Route
