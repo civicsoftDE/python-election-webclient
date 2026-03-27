@@ -1,4 +1,5 @@
-from PySide6.QtCore import QUrl
+import PySide6
+from PySide6.QtCore import QUrl, Slot
 from PySide6.QtGui import QIcon
 from PySide6.QtWebChannel import QWebChannel
 from PySide6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
@@ -7,6 +8,7 @@ from PySide6.QtWidgets import QMainWindow
 
 from core.backend_bridge import BackendBridge
 from core.config import AppConfig
+from core.pkcs11_bridge import PKCS11Bridge
 
 
 class Bootstrap(QMainWindow):
@@ -16,6 +18,7 @@ class Bootstrap(QMainWindow):
         super().__init__()
         Bootstrap._instance = self
         self.config = AppConfig()
+        self.pkcs11_bridge = PKCS11Bridge(self.config)
         self.bridge = BackendBridge(self)
         self.browser = QWebEngineView()
         self.channel = QWebChannel()
@@ -30,8 +33,7 @@ class Bootstrap(QMainWindow):
         return cls._instance
 
     def load_view(self, view_name: str):
-        html = self.bridge.load_view(view_name)
-        self.browser.setHtml(html, QUrl("qrc:///"))
+        self.bridge.load_view(view_name)
 
     def _init_window(self):
         # Fenster-Titel
@@ -48,13 +50,20 @@ class Bootstrap(QMainWindow):
         self.setMinimumHeight(self.config.get('window.min_height', 720))
 
     def _init_web_engine(self):
-        self.setCentralWidget(self.browser)
+
         settings = self.browser.settings()
-        settings.setAttribute(QWebEngineSettings.WebAttribute.Accelerated2dCanvasEnabled, True)
-        settings.setAttribute(QWebEngineSettings.WebAttribute.WebGLEnabled, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.Accelerated2dCanvasEnabled, False)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.WebGLEnabled, False)
         settings.setAttribute(QWebEngineSettings.WebAttribute.ScrollAnimatorEnabled, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.JavascriptEnabled, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.JavascriptCanAccessClipboard, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.LocalStorageEnabled, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.LocalContentCanAccessRemoteUrls, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.AutoLoadImages, True)
+        settings.setAttribute(QWebEngineSettings.WebAttribute.PluginsEnabled, True)
         profile = QWebEngineProfile.defaultProfile()
-        profile.setHttpCacheType(QWebEngineProfile.MemoryHttpCache)
+        profile.setHttpCacheType(QWebEngineProfile.HttpCacheType.MemoryHttpCache)
+        self.setCentralWidget(self.browser)
 
     def _init_web_channel(self):
         self.channel.registerObject("bridge", self.bridge)

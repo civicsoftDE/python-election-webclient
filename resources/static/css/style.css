@@ -162,3 +162,53 @@ main {
     background-color: #fff;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
 }
+
+/* 🔴 Bootstrap Form-Styles für Select zurücksetzen */
+    .form-control,
+    select.form-select,
+    select {
+        -webkit-appearance: menulist !important;
+        -moz-appearance: menulist !important;
+        appearance: menulist !important;
+        background-image: none !important;
+        background-color: #fff !important;
+        border: 1px solid #ced4da !important;
+        border-radius: 4px !important;
+        padding: 6px 12px !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Hover-State deaktivieren (verursacht Bugs in Qt) */
+    .form-control:hover,
+    select.form-select:hover,
+    select:hover {
+        border-color: #ced4da !important;
+        background-color: #fff !important;
+        box-shadow: none !important;
+    }
+
+    /* Focus-State minimieren */
+    .form-control:focus,
+    select.form-select:focus,
+    select:focus {
+        border-color: #0d6efd !important;
+        outline: 0 !important;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15) !important;
+    }
+
+    /* Radio-Buttons native lassen */
+    .form-check-input {
+        -webkit-appearance: auto !important;
+        appearance: auto !important;
+        width: auto !important;
+        height: auto !important;
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+    /* Label-Hover deaktivieren */
+    .form-check-label:hover {
+        color: inherit !important;
+        cursor: default !important;
+    }

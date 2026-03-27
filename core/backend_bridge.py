@@ -1,4 +1,4 @@
-from PySide6.QtCore import QObject, Slot
+from PySide6.QtCore import QObject, Slot, QUrl
 
 from core.router import Router
 
@@ -16,7 +16,9 @@ class BackendBridge(QObject):
         try:
             if data is None:
                 data = {}
-            return self.router.execute(route_name, **data)
+            html = self.router.execute(route_name, **data)
+            webview = self.main_window.browser
+            webview.setHtml(html, QUrl("qrc:///"))
         except Exception as e:
             print(f"Router Error: {e}")
             from core.error_controller import ErrorController

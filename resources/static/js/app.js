@@ -28,11 +28,22 @@ document.querySelector('.list-group-item-action').scrollIntoView({
     block: 'center'
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+        if (typeof Choices !== 'undefined') {
+            var choices = new Choices('.js-choice', {
+                placeholderValue: 'Bitte wählen...',
+                searchPlaceholderValue: 'Suchen...',
+                shouldSort: false
+            });
+            console.log('Choices initialisiert');
+        } else {
+            console.error('Choices.js nicht geladen!');
+        }
+    });
+
 function loadView(routeName, data = {}) {
     new QWebChannel(qt.webChannelTransport, function(channel) {
-        var bridge = channel.objects.bridge;
-        bridge.load_view(routeName, data, function(htmlContent) {
-            document.documentElement.innerHTML = htmlContent;
-        });
+        channel.objects.bridge.load_view(routeName, data);
     });
 }

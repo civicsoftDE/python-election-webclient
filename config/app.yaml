@@ -15,3 +15,7 @@ window:
 features:
   debug: true
   logging: true
+
+pkcs11:
+  conf: "C:/SoftHSM2/etc/softhsm2.conf"
+  lib: "C:/SoftHSM2/lib/softhsm2-x64.dll"

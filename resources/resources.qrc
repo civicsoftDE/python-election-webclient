@@ -3,6 +3,7 @@
     <qresource prefix="/">
         <file>base.html.j2</file>
         <file>templates/start.html.j2</file>
+        <file>templates/login.html.j2</file>
         <file>templates/result.html.j2</file>
         <file>templates/error.html.j2</file>
         <file>static/fonts/bootstrap-icons.min.css</file>

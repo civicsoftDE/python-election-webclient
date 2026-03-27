@@ -1,0 +1,86 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Willkommen{% endblock %}
+
+{% block page_title %}Startseite{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <div class="bg-secondary-subtle bg-gradient mb-5">
+        <div class="container-fluid py-5">
+            <h2 class="h3">Mein Wahllokal</h2>
+            <div class="lead">Wählen Sie eine Aktion, um zu beginnen.</div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row row-cols-4 g-3">
+            <div class="col-12">
+                <form class="row g-3" onsubmit="handleLogin(event)">
+                    {% if slots %}
+                        <div class="row">
+                            <div class="col-4">
+                                <label>SmartCard </label>
+                                <select id="slot-select" class="js-choice">
+                                    <option value="" selected>wählen ...</option>
+                                    {% for slot in slots %}
+                                        <option value="{{ slot.id }}">{{ slot.label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <label>PIN</label>
+                                <input class="form-control"
+                                       type="password"
+                                       id="pin-input"
+                                       name="password"
+                                       placeholder="Passwort"
+                                       autocomplete="off"
+                                       autocapitalize="off"
+                                       spellcheck="false">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <button class="btn btn-primary" type="submit">Login</button>
+                            </div>
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const element = document.querySelector('.js-choice');
+            if (element && !element.choices) {
+                new Choices(element, {
+                    placeholderValue: 'wählen ...',
+                    searchEnabled: false,
+                    shouldSort: false
+                });
+            }
+        });
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const slotId = document.getElementById('slot-select').value;
+            const password = document.getElementById('pin-input').value;
+
+            if (!slotId) {
+                alert('Bitte SmartCard auswählen!');
+                return;
+            }
+            loadView('auth_login', {
+                'slot_id': slotId,
+                'password': password
+            });
+        }
+    </script>
+{% endblock %}
