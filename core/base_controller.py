@@ -32,7 +32,7 @@ class BaseController:
         self.get_crypto_bridge().current_user = None
         self.default_context["app"]["user"] = None
 
-    def get_main_window(self):
+    def get_main_window(self) -> Bootstrap:
         return Bootstrap.get_instance()
 
     def get_crypto_bridge(self) -> PKCS11Bridge:
@@ -46,3 +46,8 @@ class BaseController:
         template = self.env.get_template("templates/" + view_name)
         render_context = {**self.default_context, **context}
         return template.render(**render_context)
+
+    def render_login(self):
+        return self.render("login", {
+            "slots": self.get_crypto_bridge().get_slots()
+        })

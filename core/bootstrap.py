@@ -35,6 +35,9 @@ class Bootstrap(QMainWindow):
     def load_view(self, view_name: str):
         self.bridge.load_view(view_name)
 
+    def get_bridge(self):
+        return self.bridge
+
     def _init_window(self):
         # Fenster-Titel
         self.setWindowTitle(self.config.app_name)

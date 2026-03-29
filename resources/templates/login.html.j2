@@ -2,53 +2,48 @@
 
 {% block title %}Willkommen{% endblock %}
 
-{% block page_title %}Startseite{% endblock %}
+{% block page_title %}Wahlsoftware 2{% endblock %}
 
 {% block header %}{% endblock %}
 
 {% block content %}
     <div class="bg-secondary-subtle bg-gradient mb-5">
         <div class="container-fluid py-5">
-            <h2 class="h3">Mein Wahllokal</h2>
-            <div class="lead">Wählen Sie eine Aktion, um zu beginnen.</div>
         </div>
     </div>
-
     <div class="container-fluid">
         <div class="row row-cols-4 g-3">
             <div class="col-12">
-                <form class="row g-3" onsubmit="handleLogin(event)">
-                    {% if slots %}
-                        <div class="row">
-                            <div class="col-4">
-                                <label>SmartCard </label>
+                <form class="row" onsubmit="handleLogin(event)">
+                    <div class="col-4 offset-4">
+                        <div class="row row-cols-1 g-3">
+                            <div class="col">
+                                <h4>Anmelden</h4>
+                            </div>
+                            <div class="col">
+                                <label for="slot-select" class="form-label">Smartcard </label>
                                 <select id="slot-select" class="js-choice">
-                                    <option value="" selected>wählen ...</option>
                                     {% for slot in slots %}
                                         <option value="{{ slot.id }}">{{ slot.label }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <label>PIN</label>
+                            <div class="col">
+                                <label for="pin-input" class="form-label">PIN</label>
                                 <input class="form-control"
                                        type="password"
                                        id="pin-input"
                                        name="password"
-                                       placeholder="Passwort"
+                                       placeholder="PIN"
                                        autocomplete="off"
                                        autocapitalize="off"
                                        spellcheck="false">
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <button class="btn btn-primary" type="submit">Login</button>
+                            <div class="col">
+                                <button class="btn btn-primary w-100" type="submit">Anmelden</button>
                             </div>
                         </div>
-                    {% endif %}
+                    </div>
                 </form>
             </div>
         </div>
@@ -59,11 +54,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const element = document.querySelector('.js-choice');
+
             if (element && !element.choices) {
                 new Choices(element, {
-                    placeholderValue: 'wählen ...',
                     searchEnabled: false,
-                    shouldSort: false
+                    shouldSort: true
                 });
             }
         });
@@ -75,6 +70,10 @@
 
             if (!slotId) {
                 alert('Bitte SmartCard auswählen!');
+                return;
+            }
+            if (!password) {
+                alert('Bitte PIN eingeben!');
                 return;
             }
             loadView('auth_login', {
