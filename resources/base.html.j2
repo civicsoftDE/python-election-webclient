@@ -41,7 +41,15 @@
     </div>
 </section>
 
-<section class="container-fluid">{% block message %}{% endblock %}</section>
+<section class="container-fluid">
+    {% block message %}
+        {% for flash in app.flash_messages %}
+            <div class="alert alert-{{ flash.type }}">
+                {{ flash.message }}
+            </div>
+        {% endfor %}
+    {% endblock %}
+</section>
 <main>{% block content %}{% endblock %}</main>
 
 

@@ -25,7 +25,6 @@ class Bootstrap(QMainWindow):
         self._init_window()
         self._init_web_engine()
         self._init_web_channel()
-
         self.load_view('start')
 
     @classmethod
@@ -39,21 +38,16 @@ class Bootstrap(QMainWindow):
         return self.bridge
 
     def _init_window(self):
-        # Fenster-Titel
         self.setWindowTitle(self.config.app_name)
-        # Fenster-Icon
         self.setWindowIcon(QIcon(self.config.get('window.icon')))
-        # Fenster-Größe
         self.resize(
             self.config.get('window.width', 1280),
             self.config.get('window.height', 720)
         )
-        # Minimum-Größe
         self.setMinimumWidth(self.config.get('window.min_width', 1280))
         self.setMinimumHeight(self.config.get('window.min_height', 720))
 
     def _init_web_engine(self):
-
         settings = self.browser.settings()
         settings.setAttribute(QWebEngineSettings.WebAttribute.Accelerated2dCanvasEnabled, False)
         settings.setAttribute(QWebEngineSettings.WebAttribute.WebGLEnabled, False)

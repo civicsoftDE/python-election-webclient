@@ -6,7 +6,7 @@
       <change beforePath="$PROJECT_DIR$/controller/auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/auth_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/base_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/bootstrap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/login.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/login.html.j2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/base.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/base.html.j2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources_rc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +124,7 @@
       <workItem from="1774425947838" duration="6903000" />
       <workItem from="1774452233198" duration="14813000" />
       <workItem from="1774600097502" duration="25255000" />
-      <workItem from="1774769313838" duration="2282000" />
+      <workItem from="1774769313838" duration="7066000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -182,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774651458380</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update">
+      <option name="closed" value="true" />
+      <created>1774771627953</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1774771627953</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +204,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_election_webclient$main.coverage" NAME="main Coverage Results" MODIFIED="1774452969145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_election_webclient$bootstrap.coverage" NAME="bootstrap Coverage Results" MODIFIED="1774427953569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/python_election_webclient$WebClient.coverage" NAME="WebClient Coverage Results" MODIFIED="1774771216569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_election_webclient$WebClient.coverage" NAME="WebClient Coverage Results" MODIFIED="1774776403720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
