@@ -22,11 +22,12 @@ class AuthController(BaseController):
                 self.add_flash("Login erfolgreich")
                 return self.redirect_to_route("auth_index")
             else:
-                self.add_flash("Login fehlgeschlagen", "danger") # default ist immer "success"
+                self.add_flash("Login fehlgeschlagen", "danger")  # default ist immer "success"
         return self.render_login()
 
     @route('auth_logout')
     def logout(self):
         if self.has_current_user():
             self.clear_user()
+            self.add_flash("Logout erfolgreich")
         return self.redirect_to_route("auth_login")

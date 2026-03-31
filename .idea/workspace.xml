@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02289b95-92ea-48ca-a9c2-9f48c8484391" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/af.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/bn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/bs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/cs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/da.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/de.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/dsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/el.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/eo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/et.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/eu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/fi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/gl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/he.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hsb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/is.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ka.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/km.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ko.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/lt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/lv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/mk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/nb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ne.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/nl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pt-BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sq.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sr-Cyrl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/te.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/th.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/tk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/uk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/vi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/auth_controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +121,7 @@
       <workItem from="1774452233198" duration="14813000" />
       <workItem from="1774600097502" duration="25255000" />
       <workItem from="1774769313838" duration="7981000" />
-      <workItem from="1774939575840" duration="2413000" />
+      <workItem from="1774939575840" duration="2579000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -263,7 +203,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774943798953</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <option name="closed" value="true" />
+      <created>1774943866132</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1774943866132</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update">
+      <option name="closed" value="true" />
+      <created>1774943900563</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1774943900563</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +233,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_election_webclient$main.coverage" NAME="main Coverage Results" MODIFIED="1774452969145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_election_webclient$bootstrap.coverage" NAME="bootstrap Coverage Results" MODIFIED="1774427953569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/python_election_webclient$WebClient.coverage" NAME="WebClient Coverage Results" MODIFIED="1774942981068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/python_election_webclient$WebClient.coverage" NAME="WebClient Coverage Results" MODIFIED="1774944000429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
