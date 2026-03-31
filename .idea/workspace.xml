@@ -2,11 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02289b95-92ea-48ca-a9c2-9f48c8484391" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/core/api_bridge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/route.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/base.html.j2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/base.html.j2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources_rc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/dsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/eo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/hy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/te.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/i18n/zh-TW.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +181,7 @@
       <workItem from="1774452233198" duration="14813000" />
       <workItem from="1774600097502" duration="25255000" />
       <workItem from="1774769313838" duration="7981000" />
-      <workItem from="1774939575840" duration="2114000" />
+      <workItem from="1774939575840" duration="2413000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -198,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774776726921</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <option name="closed" value="true" />
+      <created>1774943798953</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1774943798953</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
