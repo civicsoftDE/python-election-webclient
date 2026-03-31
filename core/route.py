@@ -38,7 +38,7 @@ class Route:
 
     @classmethod
     def get_route_info(cls, route_name: str) -> dict:
-        """Gibt Info für eine spezifische Route zurück"""
+        """Gibt Information für eine spezifische Route zurück"""
         return cls._registry.get(route_name)
 
     @classmethod
